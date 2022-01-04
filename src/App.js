@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+//import logo from './logo.svg';
+
 
 /*
-Display a list of movies where each movie contains a list of users that favorited it.
+Use React and the data below to display a list of users alongside their favorite movies.
 
 For detailed instructions, refer to instructions.md.
+ Jane Cruz's favorite movie is Planet Earth 1.
 */
 
 const profiles = [
@@ -44,7 +46,7 @@ const profiles = [
 const users = {
   1: {
     id: 1,
-    name: 'Jane Jones',
+    name: 'Jane Cruz',
     userName: 'coder',
   },
   2: {
@@ -58,7 +60,7 @@ const users = {
     userName: 'user123',
   },
   4: {
-    id: 3,
+    id: 4,
     name: 'John Doe',
     userName: 'user123',
   },
@@ -77,7 +79,7 @@ const users = {
 const movies = {
   1: {
     id: 1,
-    name: 'Planet Earth',
+    name: 'Planet Earth 1',
   },
   2: {
     id: 2,
@@ -96,24 +98,32 @@ const movies = {
     name: 'Get Out',
   },
 };
+/*
+Jane Cruz's favorite movie is "Planet Earth 1."
 
+Matthew Johnson's favorite movie is "Planet Earth 1."
+
+John Doe's favorite movie is "Get Out."
+
+Lauren Carlson's favorite movie is "Selma."
+
+Autumn Green's favorite movie is "Get Out."
+
+Nicholas Lain's favorite movie is "Forrest Gump."
+*/
 class App extends Component {
+ class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">ReactND - Coding Practice</h1>
-        </header>
-        <h2>How Popular is Your Favorite Movie?</h2> 
-        {profiles.map(profile => {
-          
-        })}
-		
-
+      <div>
+        <ul>
+          <h1>Favorite Movie</h1>
+          {profiles.map((profile) => ( 
+            <li>{users[profile.id].name}'s favorite movie is {movies[profile.favoriteMovieID].name} </li>
+            ))}
+        </ul>
       </div>
-    );
+    )
   }
 }
-
 export default App;
