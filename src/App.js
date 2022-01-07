@@ -111,6 +111,7 @@ Autumn Green's favorite movie is "Get Out."
 
 Nicholas Lain's favorite movie is "Forrest Gump."
 */
+// learn how to access array and display in UI
 class App extends Component {
  class App extends Component {
   render() {
